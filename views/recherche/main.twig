@@ -1,0 +1,40 @@
+
+<div ng-controller="MainCtrl" class="container">
+    <h3>Welcome to Api movie</h3>
+    ** message() **
+    ** content() **
+    <p>L'application destinée au films ... </p>
+    <div id="diagramm">
+        <h3><u>Diagramme:</u></h3>
+        <div id="container" style="width:100%; height:400px;"></div>
+
+    </div>
+    <div id="listeInscrit">
+        <h3>Recent Users </h3>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="user in users">
+                <i class="fa fa-user"></i>
+                <span> ** user.username ** </span>
+            </li>
+        </ul>
+    </div>
+    <div id="listeRessource">
+        <h3>Liste des 5 ressources les plus "aimées":</h3>
+        <div class="film-popular" ng-repeat="film in mostPopular">
+            <div class="row row-film">
+                <div class=" text-center col-md-4">
+                    <img src="http://image.tmdb.org/t/p/w500**film.poster_path**" width="200" height="300"/>
+                </div>
+                <div class="detail-film col-sm-6">
+                    <h1 class="text-center">** film.title **</h1>
+                    <div>
+                        <h3>Resume</h3>
+                        <p>** film.overview **</p>
+                    </div>
+                    <span>Date de sortie : ** film.release_date ** </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

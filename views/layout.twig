@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}MyOpinion{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              crossorigin="anonymous">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" 
+             integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" 
+             crossorigin="anonymous">
+        <link rel="stylesheet" href="../web/css/styles.css">
+        {% block stylesheet %}{% endblock %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/angular-route/angular-route.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+
+        <script src="../scripts/app.js"></script>
+        <script src="../scripts/controllers/main.js"></script>
+        <script src="../scripts/controllers/search.js"></script>
+        <script src="../web/js/script.js"></script>
+
+    </head>
+    <body ng-app="myOpinion">
+
+        {{ include('nav.twig') }}
+
+        {% block body %}
+            <ng-view></ng-view>
+        {% endblock %}
+
+        <footer class="container-fluid footer-blog">
+            <div class="container-fluid text-muted">
+                @ MyOpinion 2018
+            </div>
+        </footer>
+
+        {% block javascript %}{% endblock %}
+    </body>
+</html>

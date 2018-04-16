@@ -1,0 +1,64 @@
+
+  <div ng-controller="SearchCtrl">
+		
+		<div class="panel panel-default">
+		    <div class="panel-heading">Rechercher un Film ou une Série</div>
+
+  			<div class="panel-body">A Basic Panel
+				<div id="cadreSearch">
+
+					<div class="col-md-4">
+						<span> Vous voulez voir :</span>
+						<img src="smiley.gif" alt="Smiley face" height="42" width="42">
+
+						<label class="radio-inline"><input type="radio" value="films" ng-model="choix" ng-change="getFilms(choix)" >Films</label>
+						<label class="radio-inline"><input type="radio" value="series" ng-model="choix" ng-change="getSeries(choix)">Séries TV</label>
+					</div>
+
+		   		<div class="col-md-4">
+						<label>Rechercher </label><input  id="champRecherche" ng-model="myModel" type="search" class="form-control" placeholder="Recherche un film">
+					</div>
+					
+					<div class="col-md-6">
+						<select tabindex="-1" id="OrderBy" ng-change="searchWithOrderBy()" ng-model="OrderByValue" class="form-control">
+							<option value="">Default (Most popular)</option>
+							<option value="&sort_by=revenue.desc">Highest grossing</option>
+							<option value="&sort_by=primary_release_date.desc">Date newest</option>
+							<option value="&sort_by=primary_release_date.asc">Date oldest</option>
+						</select>
+					</div>
+					<div class="col-md-6" ng-init="getAllMovieGenre()" class="form-group"  id="MovieGenreContainer">
+						<select style="width:400px;float:left" id="MovieGenreValue" ng-change="searchWithGenre()" ng-model="MovieGenreValue" class="select2_multiple form-control" multiple="multiple" >
+							<option ng-repeat="value in allMovieGenre track by $index" value="{{value.id}}">{{value.name}}</option>
+						</select>
+					</div>
+					<div ng-init="getAllTvGenre()" class="form-group" id="TvGenreContainer">
+						<select style="width:400px;float:left" id="TvGenreValue" class="select2_multiple form-control" multiple="multiple" ng-change="searchWithGenre()" ng-model="TvGenreValue">
+							<option ng-repeat="value in allTvGenre track by $index" value="{{value.id}}">{{value.name}}</option>
+						</select>
+					</div>
+
+					<div class="col-sm-6">
+				        <h4>Sélection par date :</h4>
+				        <div class="row">
+				          <div class="col-sm-6">
+				            <div class="input-daterange form-group has-feedback">
+				              <label class="control-label">Début</label>
+				              <input class="form-control" name="dateStart" type="text" placeholder="from">
+				              <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+				            </div>
+				          </div>
+				          <div class="col-sm-6">
+				            <div class="input-daterange form-group has-feedback">
+				              <label class="control-label">Fin</label>
+				              <input class="form-control" name="dateEnd" type="text" placeholder="to">
+				              <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+				            </div>
+				          </div>
+				        </div>
+		      		</div>
+							
+			    </div>
+  			</div>
+		</div>
+

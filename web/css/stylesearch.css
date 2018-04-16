@@ -1,0 +1,24 @@
+.hover{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: none;
+    padding-bottom: 10px;
+}
+
+#conteneur
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#cadreSearch
+{
+    height: 60px;
+    padding-top: 10px;
+    position:relative;
+    margin:auto;
+}

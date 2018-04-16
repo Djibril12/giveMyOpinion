@@ -1,0 +1,16 @@
+{% extends "layout.twig" %}
+
+{% block title %} {{ parent() }} - search {% endblock %}
+
+ 
+{% block body %}
+    
+  {{ include('search-form.twig') }}
+
+
+  <div  ng-app="myOpinion" ng-controller="SearchCtrl"> 
+    Full : // message() //
+  </div>
+  
+
+{% endblock %}
